@@ -52,7 +52,7 @@ int rl_sim::loop() {
     std::cout << " " << stats.count() << ", ctxt, " << p.id() << ", action, " << chosen_action << ", outcome, " << outcome
       << ", dist, " << get_dist_str(response) << ", " << stats.get_stats(p.id(), chosen_action) << std::endl;
 
-    std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+    std::this_thread::sleep_for(std::chrono::milliseconds(10));
   }
 
   return 0;
