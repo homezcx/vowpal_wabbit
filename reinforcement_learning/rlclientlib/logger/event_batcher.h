@@ -20,7 +20,7 @@ namespace reinforcement_learning {
         flatbuffers::FlatBufferBuilder builder(_send_high_water_mark);
         TEvent evt;
         for (int i = 0; remaining > 0 && oss.size() < _send_high_water_mark; i++) {
-          if (i == 1000) break;
+          if (i == 400) break;
           queue.pop(&evt);
           ranking_event* r_event = dynamic_cast<ranking_event*>(&evt);
           events_offset.push_back(r_event->serialize_eventhub_message(builder));
@@ -39,7 +39,7 @@ namespace reinforcement_learning {
         flatbuffers::FlatBufferBuilder builder(_send_high_water_mark);
         TEvent evt;
         for (int i = 0; remaining > 0 && oss.size() < _send_high_water_mark; i++) {
-          if (i == 1000) break;
+          if (i == 400) break;
           queue.pop(&evt);
           outcome_event* o_event = dynamic_cast<outcome_event*>(&evt);
           events_offset.push_back(o_event->serialize_eventhub_message(builder));

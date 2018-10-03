@@ -17,7 +17,7 @@ namespace reinforcement_learning {
       return v_send(data, status);
     }
 
-    int send(std::vector<char> data, api_status* status = nullptr)
+    int send_byte(std::vector<char> data, api_status* status = nullptr)
     {
       return v_send(data, status);
     }

@@ -110,7 +110,7 @@ namespace reinforcement_learning {
     while (remaining > 0) {
       remaining = fill_buffer(remaining);
       api_status status;
-      if (_sender->send(_buffer.buffer(), &status) != error_code::success) {
+      if (_sender->send_byte(_buffer.buffer(), &status) != error_code::success) {
         ERROR_CALLBACK(_perror_cb, status);
       }
     }
