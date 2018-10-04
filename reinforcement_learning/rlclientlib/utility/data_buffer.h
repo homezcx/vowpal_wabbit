@@ -36,6 +36,8 @@ namespace reinforcement_learning { namespace utility {
 
     // to process binary data
     void append(const char* start, size_t len);
+    // test
+    void reserve(size_t size);
 
   private:
     std::vector<char> _buffer;

@@ -66,5 +66,9 @@ namespace reinforcement_learning {
     std::vector<char> data_buffer::buffer() {
       return _buffer;
     }
+
+    void data_buffer::reserve(size_t size) {
+      _buffer.reserve(size);
+    }
   }
 }
