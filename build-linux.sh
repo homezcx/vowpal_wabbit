@@ -3,11 +3,23 @@ set -e
 
 export PATH="$HOME/miniconda/bin:$PATH"
 
+# add flat buffers
+cd ..
+git clone https://github.com/google/flatbuffers.git
+cd ./flatbuffers
+git checkout 925c1d77fcc72636924c3c13428a34180c30f96f  # 1.10.0 release commit
+cmake .
+make
+sudo make install
+sudo cp ./flatc /usr/local/bin/
+cd ../vw
+
 make all
 make python
 mvn clean test -f java/pom.xml
 make test
 make rl_clientlib_test
+
 cd test
 ./test_race_condition.sh
 cd ..
